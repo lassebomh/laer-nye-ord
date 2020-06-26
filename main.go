@@ -75,7 +75,7 @@ func main() {
 				forslag = append(forslag, s.Text())
 			})
 
-			forslagString := "Ingen resultater. forslag: "
+			forslagString := `Ingen resultater for "` + ord + `". forslag: `
 
 			if len(forslag) > 5 {
 				forslag = forslag[:5]
@@ -120,7 +120,7 @@ func main() {
 				if e := string(citat[len(citat)-1]); !((e == "!") || (e == ".")) {
 					endDot = "."
 				}
-				dc.DrawStringAnchored(citat+endDot, float64(step), float64(start+int(2.3*float64(step))+i*step), 0, 1)
+				dc.DrawStringAnchored(`"`+citat+endDot+`"`, float64(step), float64(start+int(2.3*float64(step))+i*step), 0, 1)
 			}
 			dc.SavePNG(ord + ".png")
 		}
