@@ -41,7 +41,7 @@ func main() {
 		fmt.Print("Angiv ord: ")
 		ord, _ := reader.ReadString('\n')
 
-		r := regexp.MustCompile(`[\w\-\' ]{2,}`)
+		r := regexp.MustCompile(`[\w\-\'æøå ]{2,}`)
 
 		ord = r.FindString(ord)
 
