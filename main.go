@@ -40,7 +40,10 @@ func main() {
 	for {
 		fmt.Print("Angiv ord: ")
 		ord, _ := reader.ReadString('\n')
-		ord = ord[:len(ord)-1]
+
+		r := regexp.MustCompile(`[\w\-\' ]{2,}`)
+
+		ord = r.FindString(ord)
 
 		client := &http.Client{
 			Timeout: 30 * time.Second,
@@ -78,11 +81,16 @@ func main() {
 				foreslag = foreslag[:5]
 			}
 
-			for _, f := range foreslag {
-				foreslagString += f + ", "
+			if len(foreslag) == 0 {
+				foreslagString = "Kunne ikke finde nogle citater."
+			} else {
+				for _, f := range foreslag {
+					foreslagString += f + ", "
+				}
+				foreslagString = foreslagString[:len(foreslagString)-2]
 			}
 
-			fmt.Println(foreslagString[:len(foreslagString)-2])
+			fmt.Println(foreslagString)
 
 		} else {
 
