@@ -70,27 +70,27 @@ func main() {
 
 		if len(citater) == 0 {
 
-			var foreslag []string
+			var forslag []string
 			doc.Find("#more-alike-list-short li a").Each(func(i int, s *goquery.Selection) {
-				foreslag = append(foreslag, s.Text())
+				forslag = append(forslag, s.Text())
 			})
 
-			foreslagString := "Ingen resultater. Foreslag: "
+			forslagString := "Ingen resultater. forslag: "
 
-			if len(foreslag) > 5 {
-				foreslag = foreslag[:5]
+			if len(forslag) > 5 {
+				forslag = forslag[:5]
 			}
 
-			if len(foreslag) == 0 {
-				foreslagString = "Kunne ikke finde nogle citater."
+			if len(forslag) == 0 {
+				forslagString = "Kunne ikke finde nogle citater."
 			} else {
-				for _, f := range foreslag {
-					foreslagString += f + ", "
+				for _, f := range forslag {
+					forslagString += f + ", "
 				}
-				foreslagString = foreslagString[:len(foreslagString)-2]
+				forslagString = forslagString[:len(forslagString)-2]
 			}
 
-			fmt.Println(foreslagString)
+			fmt.Println(forslagString)
 
 		} else {
 
