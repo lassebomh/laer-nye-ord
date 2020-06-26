@@ -117,7 +117,7 @@ func main() {
 
 			for i, citat := range citater {
 				endDot := ""
-				if e := string(citat[len(citat)-1]); !((e == "!") || (e == ".")) {
+				if e := string(citat[len(citat)-1]); !((e == "!") || (e == ".") || (e == "?")) {
 					endDot = "."
 				}
 				dc.DrawStringAnchored(`"`+citat+endDot+`"`, float64(step), float64(start+int(2.3*float64(step))+i*step), 0, 1)
