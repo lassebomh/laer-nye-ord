@@ -75,7 +75,7 @@ func main() {
 				forslag = append(forslag, s.Text())
 			})
 
-			forslagString := `Ingen resultater for "` + ord + `". forslag: `
+			forslagString := `Ingen resultater for "` + ord + `". Forslag: `
 
 			if len(forslag) > 5 {
 				forslag = forslag[:5]
