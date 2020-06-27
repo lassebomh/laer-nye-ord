@@ -1,4 +1,4 @@
-# laer-nye-ord
+# lær-nye-ord
 ## Kompiler
 Klon dette repo og kør kommandoen `go build` i projektmappen.
 ## Kør programmet
